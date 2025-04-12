@@ -15,7 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/send-email', function () {
     Mail::to('hamidachaou379@gmail.com')->send(new HelloMail());
     return 'Email sent successfully!';
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/tasks', function () {
+    return view('tasks.tasks');
 });
